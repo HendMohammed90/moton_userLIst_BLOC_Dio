@@ -7,11 +7,12 @@ class UserRepo {
 
   UserRepo(this.userWebServices);
 
-  Future<List<UserModel>> getAllUsers() async {
+  Future<dynamic> getAllUsers() async {
     try {
       final users = await userWebServices.fetchAllUsers();
       print(users);
-      return users!.map((user) => UserModel.fromJson(user)).toList();
+
+      return users.map((user) => Data.fromJson(user)).toList();
     } catch (error) {
       print(error.toString());
       return [];

@@ -6,7 +6,7 @@ abstract class UserState {}
 class UserInitial extends UserState {}
 
 class UserLoaded extends UserState {
-  final List<UserModel> userList;
+  final List<dynamic> userList;
 
   UserLoaded(this.userList);
 }

@@ -8,8 +8,8 @@ part 'user_state.dart';
 class CharacterCubit extends Cubit<UserState> {
   CharacterCubit(this.userRepo) : super(UserInitial());
   final UserRepo userRepo;
-  List<UserModel> resultList = [];
-  List<UserModel> getAllCharacter() {
+  List<dynamic> resultList = [];
+  List<dynamic> getAllCharacter() {
     userRepo.getAllUsers().then((list) {
       emit(UserLoaded((list)));
       resultList = list;

@@ -25,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return BlocBuilder<CharacterCubit, UserState>(
       builder: (BuildContext context, state) {
         if (state is UserLoaded) {
-          users = (state).userList;
+          users = (state).userList as List<UserModel>;
           return buildLoadedListWidgets();
         } else {
           return const Center(
